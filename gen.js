@@ -67,3 +67,16 @@ function has(string) {
   }
 }
 
+/* isDef: Is this shit good?
+ * Example:
+ * if(isDef(thing)) {
+ *   thing.foo().bar = 'gr888888';
+ * } */
+function isDef(thing) {
+  if (typeof thing === 'undefined' || thing === null || thing === 'undefined') {
+    return false;
+  } else {
+    return true;
+  }
+}
+
