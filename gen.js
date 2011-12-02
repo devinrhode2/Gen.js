@@ -59,7 +59,7 @@ function has(string) {
   if (typeof has.url === 'undefined') {
     alert('you need to set has.url to a url.');
   } else {
-    if (has.url.lastIndexOf(string) > -1) {
+    if (has.url.indexOf(string) > -1) {
       return true;
     } else {
       return false;
