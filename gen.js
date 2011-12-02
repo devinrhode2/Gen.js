@@ -26,15 +26,15 @@ function GET(url, callback) {
 /* Example: 
  * POST('example.php', 'key=val&note=yeah'); 
  * -- data may also work as a javascript object, haven't tried this */
-function POST(url, data) {
+function POST(url, data, callback) {
   var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("POST",url ,true);
   xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-      return xmlhttp;
+      callback(xmlhttp);
     }
   }
   xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-  xmlhttp.open("POST",url ,true);
   xmlhttp.send(data);
 }
 
