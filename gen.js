@@ -11,27 +11,43 @@
  * May run into issues with ajax call being cached.
  * A third options param would be nice to handle this and other things.
  * Alternatively, storing settings for GET within itself, like GET.cache = false would be great too */
- 
 function GET(url, callback) {
   var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("GET",url + '?nocache='+Date.now() ,true);
   xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-      callback(JSON.parse(xmlhttp.responseText));
+    if (xmlhttp.readyState === 4) {
+      if (xmlhttp.status === 200) {
+        try {
+          callback(JSON.parse(xmlhttp.responseText));
+        } catch(e) { console.error(e); }
+      } else {
+        console.error('GET error for: ' + url);
+        console.error('xhr:');
+        console.error(xmlhttp);
+      }
     }
   }
-  xmlhttp.open("GET",url ,true);
   xmlhttp.send();
 }
+
 
 /* Example: 
  * POST('example.php', 'key=val&note=yeah'); 
  * -- data may also work as a javascript object, haven't tried this */
 function POST(url, data, callback) {
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST",url ,true);
+  xmlhttp.open("POST",url + '?nocache='+Date.now() ,true);
   xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-      callback(xmlhttp);
+    if (xmlhttp.readyState === 4) {
+      if (xmlhttp.status === 200) {
+        try {
+          callback(JSON.parse(xmlhttp.responseText));
+        } catch(e) {console.error(e); }
+      } else {
+        console.error('POST error for: ' + url);
+        console.error('xhr:');
+        console.error(xmlhttp);
+      }
     }
   }
   xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -49,7 +65,7 @@ function each(darnArray, action) {
   }
 }
 
-/* has: Does a string have a certain substring inside it?
+/* has: Does a url have a certain substring inside it?
  * Example:
  * has.url = location.href;
  * if (has('https://')) {
@@ -67,16 +83,4 @@ function has(string) {
   }
 }
 
-/* isDef: Is this shit good?
- * Example:
- * if(isDef(thing)) {
- *   thing.foo().bar = 'gr888888';
- * } */
-function isDef(thing) {
-  if (typeof thing === 'undefined' || thing === null || thing === 'undefined') {
-    return false;
-  } else {
-    return true;
-  }
-}
 
