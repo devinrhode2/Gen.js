@@ -17,9 +17,18 @@ function GET(url, callback) {
   xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState === 4) {
       if (xmlhttp.status === 200) {
-        try {
-          callback(JSON.parse(xmlhttp.responseText));
-        } catch(e) { console.error(e); }
+        var resp = xmlhttp.responseText;
+        if (typeof callback !== 'undefined') {
+          try {
+            if (resp.indexOf('{') !== 0) {
+              callback(JSON.parse(xmlhttp.responseText));
+            } else {
+              callback(xmlhttp.responseText);
+            }
+          } catch(e) { console.error(e); }
+        } else {
+          console.error(xmlhttp.responseText);
+        }
       } else {
         console.error('GET error for: ' + url);
         console.error('xhr:');
@@ -40,9 +49,18 @@ function POST(url, data, callback) {
   xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState === 4) {
       if (xmlhttp.status === 200) {
-        try {
-          callback(JSON.parse(xmlhttp.responseText));
-        } catch(e) {console.error(e); }
+        var resp = xmlhttp.responseText;
+        if (typeof callback !== 'undefined') {
+          try {
+            if (resp.indexOf('{') !== 0) {
+              callback(JSON.parse(xmlhttp.responseText));
+            } else {
+              callback(xmlhttp.responseText);
+            }
+          } catch(e) { console.error('caught:'); console.error(e); }
+        } else {
+          console.error(xmlhttp.responseText);
+        }
       } else {
         console.error('POST error for: ' + url);
         console.error('xhr:');
