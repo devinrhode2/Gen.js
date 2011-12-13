@@ -20,7 +20,7 @@ function GET(url, callback) {
         var resp = xmlhttp.responseText;
         if (typeof callback !== 'undefined') {
           try {
-            if (resp.indexOf('{') !== 0) {
+            if (resp.indexOf('{') === 0) {
               callback(JSON.parse(xmlhttp.responseText));
             } else {
               callback(xmlhttp.responseText);
@@ -52,7 +52,7 @@ function POST(url, data, callback) {
         var resp = xmlhttp.responseText;
         if (typeof callback !== 'undefined') {
           try {
-            if (resp.indexOf('{') !== 0) {
+            if (resp.indexOf('{') === 0) {
               callback(JSON.parse(xmlhttp.responseText));
             } else {
               callback(xmlhttp.responseText);
