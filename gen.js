@@ -39,6 +39,36 @@ function GET(url, callback) {
   xmlhttp.send();
 }
 
+/* Simpler version
+function GET(url, callback) {
+  var xmlhttp = new XMLHttpRequest();
+  
+  //prevent caching
+  if (url.indexOf('?') > -1) {
+    xmlhttp.open("GET",url + '&nocache='+Date.now() ,true);
+  } else {
+    xmlhttp.open("GET",url + '?nocache='+Date.now() ,true);
+  }
+  
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState === 4) {
+      if (xmlhttp.status === 200) {
+        var resp = xmlhttp.responseText;
+        if (typeof callback !== 'undefined') {
+          callback(xmlhttp.responseText);
+        } else {
+          console.error(xmlhttp.responseText);
+        }
+      } else {
+        console.error('GET error for: ' + url);
+        console.error('xhr:');
+        console.error(xmlhttp);
+      }
+    }
+  }
+  xmlhttp.send();
+}*/
+
 
 /* Example: 
  * POST('example.php', 'key=val&note=yeah'); 
