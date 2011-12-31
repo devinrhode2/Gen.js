@@ -15,7 +15,7 @@ String.prototype.has = function(string) {
       return true;
   } else {
       return false;
-  } //could just return boolean > expression, but this is more readible.
+  } //could just return the boolean > expression, but this is more readible.
 };
 
 /**
