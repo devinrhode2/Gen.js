@@ -9,6 +9,7 @@ String.has
 Does a given string have a substring in it?
 
 `var url = 'http://TheScoutApp.com';
+
 if (url.has('https')) alert('This is a secure url!');`
 
 
@@ -17,10 +18,13 @@ Array.each
 
 Call a function on each item of an array, passing to it the index of the item it's being called on.
 
-`var arr = [1, 2, 3];`
-`arr.each(function(someArrayIndex){`
-`  arr[someArrayIndex]++;`
-`});`
+`var arr = [1, 2, 3];
+
+arr.each(function(someArrayIndex){
+
+  arr[someArrayIndex]++;
+
+});`
 
 Creator
 ---------------
