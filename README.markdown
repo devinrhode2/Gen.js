@@ -1,12 +1,13 @@
 Gen.js
 =================
 
-The most helpful javascript tidbits to copy/paste into wherever you need. As of now just a String.has and Array.each methods are defined.
+As of now just a two helpful javascript tidbits: String.has and Array.each.
 
 String.has
 ----------
 
 Does a given string have a substring in it?
+
 `var url = 'http://TheScoutApp.com';`
 `if (url.has('https')) alert('This is a secure url!');`
 
@@ -15,6 +16,7 @@ Array.each
 -----------
 
 Call a function on each item of an array, passing to it the index of the item it's being called on.
+
 `var arr = [1, 2, 3];`
 `arr.each(function(someArrayIndex){`
 `  arr[someArrayIndex]++;`
