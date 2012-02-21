@@ -8,8 +8,8 @@ String.has
 
 Does a given string have a substring in it?
 
-`var url = 'http://TheScoutApp.com';`
-`if (url.has('https')) alert('This is a secure url!');`
+`var url = 'http://TheScoutApp.com';
+if (url.has('https')) alert('This is a secure url!');`
 
 
 Array.each
