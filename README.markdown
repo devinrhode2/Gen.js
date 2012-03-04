@@ -19,13 +19,13 @@ Call a function on each item of an array, passing to it the index of the item it
 
     var arr = [1, 2, 3];
     arr.each(function(someArrayIndex){
-      arr[someArrayIndex]++;
+      arr[someArrayIndex]++; //increment every number in an array.
     });
 
 Creator
 ---------------
 
-Is Devin Rhode. He's OCD about stuff, and is started his career in Silicon Valley at age 19, follow him on twitter here: http://Twitter.com/DevinRhode2 and subscribe to his public posts on facebook at: http://Facebook.com/Devin.Rhode404
+Is Devin Rhode. He's OCD about stuff, and started his career in Silicon Valley at age 19, follow him on twitter here: http://Twitter.com/DevinRhode2 and subscribe to his public posts on facebook at: http://Facebook.com/Devin.Rhode404
 
 Throughout most of the internet, he is DevinRhode2 (here, StackOverflow, gmail, .. EVERYWHERE)
 
