@@ -1,0 +1,17 @@
+{
+  "author": "Devin Rhode <DevinRhode2@Gmail.com> (devinrhode2.nodester.com)",
+  "name": "gen.js",
+  "description": "Some general JavaScript utilities by and for DevinRhode2",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/devinrhode2/Gen.js.git"
+  },
+  "main": "gen.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

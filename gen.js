@@ -2,11 +2,11 @@
  * has: Does a string have a certain substring inside it?
  * Example:
  * if ('http://google.com'.has('https://')) {
- *   secure = true;
+ *   console.error('This is a secure page!');
  * }
  */
 String.prototype.has = function(string) {
-  if (tyepof string !== 'String') {
+  if (typeof string !== 'string') {
     throw '.has only takes a string object as a parameter, and received an item of type ' + typeof string + 
       'Check the console to see what was received.';
     return false;
