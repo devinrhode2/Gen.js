@@ -1,26 +1,9 @@
 Gen.js
 =================
 
-As of now just a two helpful javascript tidbits: String.has and Array.each.
+I've found all my methods in this library (2) are in future versions of EcmaScript! These are String.contains and Array.forEach, I highly recommend finding a ES6 shim filled with these and plenty more goodies!
 
-String.has
-----------
-
-Does a given string have a substring in it?
-
-    var url = 'http://TheScoutApp.com';
-    if (url.has('https')) alert('This is a secure page!');
-
-
-Array.each
------------
-
-Call a function on each item of an array, passing to it the index of the item it's being called on.
-
-    var arr = [1, 2, 3];
-    arr.each(function(someArrayIndex){
-      arr[someArrayIndex]++; //increment every number in an array.
-    });
+There are various other undocumented goodies in here, feel free to throw issues and pull requests at me regarding documentation.
 
 Creator
 ---------------
