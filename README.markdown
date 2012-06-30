@@ -1,9 +1,7 @@
 Gen.js
 =================
 
-I've found all my methods in this library (2) are in future versions of EcmaScript! These are String.contains and Array.forEach, I highly recommend finding a ES6 shim filled with these and plenty more goodies!
-
-There are various other undocumented goodies in here, feel free to throw issues and pull requests at me regarding documentation.
+My flavor of JS. Have a taste, it's not bad. You'll find most of [extension-include](https://github.com/devinrhode2/extension-include) is general javascript enhancements, which used to be this repository.
 
 Creator
 ---------------
